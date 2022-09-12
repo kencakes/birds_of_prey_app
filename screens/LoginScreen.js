@@ -35,9 +35,9 @@ const LoginScreen = () => {
     return(
         <KeyboardAvoidingView style={styles.container} behavior="padding">
             <View style={styles.inputContainer}>
-                {/*value={ } onChangeText={text => }*/}
                 <TextInput placeholder="Email" style={styles.input} value={email} onChangeText={text => setEmail(text)}/>
                 <TextInput placeholder="Password" style={styles.input} secureTextEntry value={password} onChangeText={text => setPassword(text)}/>
+                <Text style={styles.passwordResetText} onPress={() => navigation.navigate("Password reset")}>Forgot Password?</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={handleLogin} style={styles.button}>
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-
     },
     inputContainer: {
         width: '80%',
@@ -70,6 +69,10 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         borderRadius: 15,
         marginTop: 5
+    },
+    passwordResetText: {
+        alignSelf: "center",
+        marginTop: 10
     },
     buttonContainer: {
         width: '60%',
